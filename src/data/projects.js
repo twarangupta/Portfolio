@@ -21,11 +21,11 @@ export const projects = [
   },
   {
     id: 3,
-    title: "Project Three",
+    title: "Taskflow",
     summary:
-      "A brief description of your third project. Highlight the problem it solves and the impact it had.",
-    stack: ["Node.js", "MongoDB", "Express"],
-    github: "https://github.com/twarangupta/project-three",
+      "A lightweight, clean task management dashboard built to help organize project sprints. Features a dynamic drag-and-drop board, customizable columns, and filterable team tags.",
+    stack: ["Node.js", "MongoDB", "Express", "React", "React-DnD"],
+    github: "https://github.com/twarangupta/taskflow",
     live: "",
     featured: false,
   },

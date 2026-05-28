@@ -14,11 +14,6 @@ const CodeIcon = () => (
   </svg>
 );
 
-const stats = [
-  { label: 'Technologies', value: '15+' },
-  { label: 'Years Coding', value: '1.5+' },
-];
-
 export default function Home() {
   return (
     <div className="page-wrapper home-page">
@@ -27,21 +22,15 @@ export default function Home() {
         <div className="container hero-inner">
           {/* Left: Text */}
           <div className="hero-content">
-            <div className="hero-badge animate-fade-up" style={{ animationDelay: '0ms' }}>
-              <span className="status-dot" />
-              Available for opportunities
-            </div>
-
             <h1 className="hero-title animate-fade-up" style={{ animationDelay: '80ms' }}>
-              Hi, I'm <span className="gradient-text">Twaran</span> 👋
+              Hi, I'm <span className="gradient-text">Twaran</span>
               <br />
-              <span className="hero-subtitle-line">I build things for the web</span>
+              <span className="hero-subtitle-line">I craft seamless experiences for the web</span>
             </h1>
 
             <p className="hero-bio animate-fade-up" style={{ animationDelay: '160ms' }}>
-              A software developer who loves turning ideas into clean, fast, and
-              meaningful digital experiences. I enjoy working across the full stack —
-              from polished UIs to scalable backends.
+              I'm a full-stack developer who enjoys building clean, interactive web applications.
+              I love taking ideas from concept to functional code, working across both the front-end and back-end.
             </p>
 
             <div className="hero-actions animate-fade-up" style={{ animationDelay: '240ms' }}>
@@ -51,16 +40,6 @@ export default function Home() {
               <Link to="/contact" className="btn btn-outline" id="hero-contact-btn">
                 Get In Touch
               </Link>
-            </div>
-
-            {/* Stats */}
-            <div className="hero-stats animate-fade-up" style={{ animationDelay: '320ms' }}>
-              {stats.map((s) => (
-                <div key={s.label} className="stat-item">
-                  <span className="stat-value gradient-text">{s.value}</span>
-                  <span className="stat-label">{s.label}</span>
-                </div>
-              ))}
             </div>
           </div>
 
@@ -85,13 +64,12 @@ export default function Home() {
           </div>
           <div className="about-text">
             <h2 className="about-heading">
-              Developer by choice, <span className="gradient-text">builder by nature</span>
+              A bit about <span className="gradient-text">what I do</span>
             </h2>
             <p className="about-desc">
-              I love the craft of building software — from architecting clean APIs
-              to fine-tuning pixel-perfect interfaces. Currently focused on
-              full-stack JavaScript/TypeScript, with a growing interest in developer
-              tooling and open source.
+              I really enjoy the process of bringing projects to life from scratch.
+              Whether that's putting together a clean, responsive layout or setting up APIs
+              and databases, I like keeping the codebase straightforward and easy to maintain.
             </p>
             <div className="about-tags">
               {['React', 'Node.js', 'PostgreSQL', 'Vite', 'Python'].map((t) => (

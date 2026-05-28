@@ -9,7 +9,6 @@ function SkillCategory({ category, index }) {
       id={`skill-category-${category.category.toLowerCase().replace(/\s+/g, '-')}`}
     >
       <div className="skill-card-header">
-        <span className="skill-icon">{category.icon}</span>
         <h3 className="skill-category">{category.category}</h3>
       </div>
       <div className="skill-items">
@@ -48,11 +47,10 @@ export default function Skills() {
 
         {/* Learning banner */}
         <div className="learning-banner animate-fade-up" style={{ animationDelay: '480ms' }}>
-          <span className="learning-emoji">🚀</span>
           <div>
             <p className="learning-title">Always Learning</p>
             <p className="learning-desc">
-              Currently exploring TypeScript, Docker, and cloud architecture.
+              Currently exploring AI integration, LLM & RAG.
               If it's interesting, I'll probably learn it.
             </p>
           </div>

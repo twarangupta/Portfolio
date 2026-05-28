@@ -54,9 +54,7 @@ export default function Navbar({ theme, toggleTheme }) {
     <header className={`navbar${scrolled ? ' scrolled' : ''}`}>
       <div className="container navbar-inner">
         <NavLink to="/" className="navbar-logo">
-          <span className="logo-bracket">&lt;</span>
-          <span className="logo-name gradient-text">TW</span>
-          <span className="logo-bracket">/&gt;</span>
+          Twaran Gupta
         </NavLink>
 
         <nav className={`navbar-links${menuOpen ? ' open' : ''}`}>

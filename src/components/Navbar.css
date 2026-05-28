@@ -10,14 +10,15 @@
 
 .navbar.scrolled {
   padding: 12px 0;
-  background: rgba(10, 10, 15, 0.75);
+  background: var(--bg-primary);
+  opacity: 0.98;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border-color);
 }
 
 [data-theme='light'] .navbar.scrolled {
-  background: rgba(248, 248, 255, 0.8);
+  background: var(--bg-primary);
 }
 
 .navbar-inner {
@@ -27,25 +28,16 @@
 }
 
 .navbar-logo {
-  font-size: 1.2rem;
-  font-weight: 700;
-  font-family: var(--font-mono);
-  display: flex;
-  align-items: center;
-  gap: 2px;
+  font-size: 1.25rem;
+  font-weight: 800;
+  font-family: var(--font-display);
+  letter-spacing: -0.035em;
+  color: var(--text-primary);
   transition: opacity var(--transition-fast);
 }
 
 .navbar-logo:hover {
   opacity: 0.8;
-}
-
-.logo-bracket {
-  color: var(--text-muted);
-}
-
-.logo-name {
-  font-family: var(--font-mono);
 }
 
 .navbar-links {
