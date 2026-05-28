@@ -58,7 +58,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--icon-color, var(--accent-primary));
+  color: var(--accent-primary);
   flex-shrink: 0;
   transition: all var(--transition-fast);
   opacity: 0.85;

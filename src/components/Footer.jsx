@@ -19,7 +19,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="container footer-inner">
         <p className="footer-copy">
-          © {year} <span className="gradient-text">Twaran Gupta</span> · Built with React &amp; Vite
+          {year} <span className="gradient-text"></span>
         </p>
         <div className="footer-links">
           <a
