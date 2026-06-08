@@ -1,5 +1,14 @@
 export const projects = [
   {
+    id: 4,
+    title: "JobMaxxing",
+    summary:
+      "A modern, Gen Z-focused job portal designed to match emerging talent with companies through a streamlined, engaging interface.",
+    stack: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
+    live: "https://jobmaxxing.in",
+    featured: true,
+  },
+  {
     id: 1,
     title: "VibeCoded",
     summary:
