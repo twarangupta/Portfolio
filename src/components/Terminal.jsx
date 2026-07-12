@@ -15,11 +15,24 @@ const HELP_LINES = [
   '  skills         tech stack',
   '  contact        email & links',
   '  resume         download resume (PDF)',
-  '  ask <question> ask AI about my experience',
   '  cd projects    go to /projects',
   '  cd experience  go to /experience',
   '  clear          clear the terminal',
   '  help           show this list',
+  '',
+  "Anything else is sent to AI as a question.",
+];
+
+const KNOWN_COMMANDS = new Set([
+  'whoami', 'skills', 'contact', 'resume', 'cd projects', 'cd experience', 'help', 'clear',
+]);
+
+const PLACEHOLDER_QUESTIONS = [
+  'what did you work on at ZS Associates?',
+  "what's your tech stack?",
+  'tell me about GlobalShare',
+  'what are you looking for next?',
+  'what did you study in college?',
 ];
 
 const TOKEN_REGEX = /(\bconst\b)|('(?:[^'\\]|\\.)*')|([{}[\],;])|([A-Za-z_$][A-Za-z0-9_$]*)(?=\s*:)/g;
@@ -55,8 +68,6 @@ function runCommand(raw, navigate) {
   const cmd = raw.trim().toLowerCase();
 
   switch (cmd) {
-    case '':
-      return null;
     case 'whoami':
       return 'Twaran Gupta — Software Development Engineer at ZS Associates. I build production systems for Fortune 500 enterprises, from React UIs to Node APIs to data pipelines.';
     case 'skills':
@@ -81,7 +92,7 @@ function runCommand(raw, navigate) {
     case 'clear':
       return '__CLEAR__';
     default:
-      return `command not found: ${raw}\ntype 'help' for a list of commands`;
+      return null;
   }
 }
 
@@ -91,6 +102,7 @@ export default function Terminal() {
   const [typingDone, setTypingDone] = useState(false);
   const [history, setHistory] = useState([]);
   const [input, setInput] = useState('');
+  const [placeholderIdx, setPlaceholderIdx] = useState(0);
   const bodyRef = useRef(null);
   const inputRef = useRef(null);
 
@@ -117,18 +129,21 @@ export default function Terminal() {
     if (typingDone) inputRef.current?.focus();
   }, [typingDone]);
 
+  useEffect(() => {
+    if (!typingDone) return;
+    const id = setInterval(() => {
+      setPlaceholderIdx((i) => (i + 1) % PLACEHOLDER_QUESTIONS.length);
+    }, 3000);
+    return () => clearInterval(id);
+  }, [typingDone]);
+
   const askAI = async (command, question) => {
     const entryIndex = history.length;
-    setHistory((prev) => [...prev, { command, output: 'Thinking...', isAI: true }]);
+    setHistory((prev) => [...prev, { command, output: 'Thinking...', isAI: true, loading: true }]);
 
     const setAnswer = (output) => {
-      setHistory((prev) => prev.map((h, i) => (i === entryIndex ? { ...h, output } : h)));
+      setHistory((prev) => prev.map((h, i) => (i === entryIndex ? { ...h, output, loading: false } : h)));
     };
-
-    if (!question) {
-      setAnswer("Usage: ask <question>, e.g. ask 'what did you work on at ZS Associates?'");
-      return;
-    }
 
     try {
       const res = await fetch('/api/ask', {
@@ -148,18 +163,20 @@ export default function Terminal() {
     const command = input;
     setInput('');
 
-    const trimmed = command.trim().toLowerCase();
-    if (trimmed === 'ask' || trimmed.startsWith('ask ')) {
-      askAI(command, command.trim().slice(3).trim());
+    const trimmed = command.trim();
+    if (!trimmed) return;
+
+    if (KNOWN_COMMANDS.has(trimmed.toLowerCase())) {
+      const output = runCommand(command, navigate);
+      if (output === '__CLEAR__') {
+        setHistory([]);
+      } else {
+        setHistory((prev) => [...prev, { command, output }]);
+      }
       return;
     }
 
-    const output = runCommand(command, navigate);
-    if (output === '__CLEAR__') {
-      setHistory([]);
-    } else {
-      setHistory((prev) => [...prev, { command, output }]);
-    }
+    askAI(command, trimmed);
   };
 
   return (
@@ -188,7 +205,7 @@ export default function Terminal() {
         {typingDone && (
           <div className="terminal-session">
             <p className="terminal-hint">
-              Type 'help' for commands, or 'ask &lt;question&gt;' for an AI-powered answer.
+              Type 'help' for commands — anything else is a question for AI.
             </p>
 
             {history.map((h, idx) => (
@@ -198,7 +215,7 @@ export default function Terminal() {
                   <span>{h.command}</span>
                 </div>
                 {h.output && (
-                  <pre className="terminal-output">
+                  <pre className={`terminal-output${h.loading ? ' ai-thinking' : ''}`}>
                     {h.isAI && <span className="ai-tag">AI</span>}
                     {h.output}
                   </pre>
@@ -213,6 +230,7 @@ export default function Terminal() {
                 className="terminal-input"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
+                placeholder={PLACEHOLDER_QUESTIONS[placeholderIdx]}
                 spellCheck="false"
                 autoComplete="off"
                 autoCapitalize="off"
