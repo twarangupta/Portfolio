@@ -29,7 +29,7 @@
   left: 0;
   right: 0;
   height: 2px;
-  background: var(--accent-gradient);
+  background: var(--accent-primary);
   opacity: 0;
   transition: opacity var(--transition-base);
 }
@@ -37,7 +37,7 @@
 .skill-card:hover {
   border-color: var(--border-hover);
   transform: translateY(-3px);
-  box-shadow: var(--shadow-card), var(--shadow-glow);
+  box-shadow: var(--shadow-card);
 }
 
 .skill-card:hover::after {
