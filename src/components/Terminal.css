@@ -143,6 +143,20 @@
   vertical-align: middle;
 }
 
+.ai-thinking {
+  animation: ai-pulse 1.1s ease-in-out infinite;
+}
+
+@keyframes ai-pulse {
+  0%, 100% {
+    opacity: 0.55;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
 .terminal-input {
   flex: 1;
   border: none;
@@ -152,6 +166,10 @@
   font-family: var(--font-mono);
   font-size: 0.85rem;
   caret-color: var(--accent-primary);
+}
+
+.terminal-input::placeholder {
+  color: var(--text-muted);
 }
 
 @media (max-width: 640px) {
