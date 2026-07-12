@@ -18,9 +18,7 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="container footer-inner">
-        <p className="footer-copy">
-          {year} <span className="gradient-text"></span>
-        </p>
+        <p className="footer-copy">© {year} Twaran Gupta</p>
         <div className="footer-links">
           <a
             href="https://github.com/twarangupta"
