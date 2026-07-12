@@ -119,7 +119,7 @@ export default function Terminal() {
 
   const askAI = async (command, question) => {
     const entryIndex = history.length;
-    setHistory((prev) => [...prev, { command, output: 'Thinking...' }]);
+    setHistory((prev) => [...prev, { command, output: 'Thinking...', isAI: true }]);
 
     const setAnswer = (output) => {
       setHistory((prev) => prev.map((h, i) => (i === entryIndex ? { ...h, output } : h)));
@@ -187,7 +187,9 @@ export default function Terminal() {
 
         {typingDone && (
           <div className="terminal-session">
-            <p className="terminal-hint">Type 'help' to list all commands.</p>
+            <p className="terminal-hint">
+              Type 'help' for commands, or 'ask &lt;question&gt;' for an AI-powered answer.
+            </p>
 
             {history.map((h, idx) => (
               <div className="terminal-entry" key={idx}>
@@ -195,7 +197,12 @@ export default function Terminal() {
                   <span className="terminal-prompt">$</span>
                   <span>{h.command}</span>
                 </div>
-                {h.output && <pre className="terminal-output">{h.output}</pre>}
+                {h.output && (
+                  <pre className="terminal-output">
+                    {h.isAI && <span className="ai-tag">AI</span>}
+                    {h.output}
+                  </pre>
+                )}
               </div>
             ))}
 
