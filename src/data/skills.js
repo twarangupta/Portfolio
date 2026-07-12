@@ -1,27 +1,26 @@
 export const skills = [
   {
     category: "Languages",
-    icon: "💻",
-    items: ["JavaScript", "Python", "TypeScript", "SQL", "HTML", "CSS"],
+    items: ["JavaScript", "TypeScript", "Python", "C++", "SQL", "HTML", "CSS"],
   },
   {
     category: "Frontend",
-    icon: "🎨",
-    items: ["React", "Vite", "React Router", "CSS Modules", "Responsive Design"],
+    items: ["React", "Angular", "Redux", "Vite", "React Router", "Responsive Design"],
   },
   {
     category: "Backend",
-    icon: "⚙️",
-    items: ["Node.js", "Express.js", "REST APIs"],
+    items: ["Node.js", "Express.js", "REST APIs", "Redis", "JWT Authentication", "RBAC"],
   },
   {
     category: "Database",
-    icon: "🗄️",
-    items: ["PostgreSQL", "Supabase", "SQLite", "MongoDB"],
+    items: ["PostgreSQL", "MySQL", "MongoDB", "Snowflake", "Supabase", "SQLite"],
   },
   {
-    category: "Tools & Platforms",
-    icon: "🛠️",
-    items: ["Git", "GitHub", "Vercel", "VS Code", "npm"],
+    category: "Cloud & DevOps",
+    items: ["AWS S3", "Docker", "Firebase", "IICS (Informatica)", "CI/CD"],
+  },
+  {
+    category: "Tools & Practices",
+    items: ["Git", "GitHub", "Bitbucket", "Vercel", "Agile/Scrum", "Data Structures & Algorithms"],
   },
 ];
