@@ -26,25 +26,10 @@
   animation: fadeInUp 0.5s ease both;
 }
 
-.contact-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: var(--accent-gradient);
-  opacity: 0;
-  transition: opacity var(--transition-base);
-  pointer-events: none;
-}
-
 .contact-card:hover {
   border-color: var(--border-hover);
   transform: translateY(-3px);
-  box-shadow: var(--shadow-card), var(--shadow-glow);
-}
-
-.contact-card:hover::before {
-  opacity: 0.04;
+  box-shadow: var(--shadow-card);
 }
 
 .contact-card:hover .contact-arrow {
@@ -58,14 +43,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--accent-primary);
+  color: var(--text-secondary);
   flex-shrink: 0;
   transition: all var(--transition-fast);
-  opacity: 0.85;
 }
 
 .contact-card:hover .contact-icon {
-  opacity: 1;
+  color: var(--accent-primary);
   transform: scale(1.1);
 }
 

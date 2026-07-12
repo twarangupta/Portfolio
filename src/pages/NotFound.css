@@ -1,0 +1,35 @@
+.not-found-page {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+}
+
+.not-found-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-4);
+  padding: var(--space-16) 0;
+}
+
+.not-found-code {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+}
+
+.not-found-title {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.not-found-desc {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  max-width: 420px;
+  margin-bottom: var(--space-4);
+}

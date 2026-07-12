@@ -74,10 +74,8 @@ export default function Projects() {
       <div className="container">
         {/* Header */}
         <div className="page-header animate-fade-up">
-          <span className="page-label">Portfolio</span>
-          <h1 className="page-title">
-            Things I've <span className="gradient-text">Built</span>
-          </h1>
+          <span className="page-label">// Portfolio</span>
+          <h1 className="page-title">Things I've Built</h1>
           <p className="page-desc">
             A selection of projects I've worked on — ranging from full-stack
             applications to experiments and open-source contributions.

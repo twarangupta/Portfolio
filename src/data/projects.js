@@ -1,7 +1,7 @@
 export const projects = [
   {
     id: 4,
-    title: "JobMaxxing",
+    title: "JobMaxxing AI",
     summary:
       "A modern, Gen Z-focused job portal designed to match emerging talent with companies through a streamlined, engaging interface.",
     stack: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
@@ -10,22 +10,12 @@ export const projects = [
   },
   {
     id: 1,
-    title: "VibeCoded",
+    title: "GlobalShare",
     summary:
-      "A full-stack web application with an Express.js backend and React/Vite frontend, integrated with Supabase (PostgreSQL) for cloud data storage and deployed on Vercel.",
+      "A platform to instantly share text, files, and JSON snippets globally via short links — built with an Express.js backend and React/Vite frontend, backed by Supabase (PostgreSQL) and deployed on Vercel.",
     stack: ["React", "Vite", "Express.js", "Supabase", "PostgreSQL", "Vercel"],
     github: "https://github.com/twarangupta/vibecoded",
     live: "https://textsharefront.vercel.app/",
-    featured: true,
-  },
-  {
-    id: 2,
-    title: "Portfolio Website",
-    summary:
-      "A clean, modern multi-page portfolio built with Vite + React, featuring dark mode, smooth animations, and a responsive layout.",
-    stack: ["React", "Vite", "CSS Modules", "React Router"],
-    github: "https://github.com/twarangupta/portfolio",
-    live: "#",
     featured: true,
   },
   {

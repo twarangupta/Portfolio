@@ -28,10 +28,8 @@ export default function Skills() {
       <div className="container">
         {/* Header */}
         <div className="page-header animate-fade-up">
-          <span className="page-label">Toolkit</span>
-          <h1 className="page-title">
-            Skills &amp; <span className="gradient-text">Technologies</span>
-          </h1>
+          <span className="page-label">// Toolkit</span>
+          <h1 className="page-title">Skills &amp; Technologies</h1>
           <p className="page-desc">
             The languages, frameworks, and tools I use to bring ideas to life.
             Always learning, always adding to the list.
