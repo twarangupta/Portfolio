@@ -31,6 +31,15 @@ const InstagramIcon = () => (
   </svg>
 );
 
+const ResumeIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+    <polyline points="14 2 14 8 20 8" />
+    <line x1="8" y1="13" x2="16" y2="13" />
+    <line x1="8" y1="17" x2="16" y2="17" />
+  </svg>
+);
+
 const contacts = [
   {
     id: 'github-link',
@@ -38,7 +47,6 @@ const contacts = [
     label: 'GitHub',
     handle: '@twarangupta',
     href: 'https://github.com/twarangupta',
-    color: '#6e7681',
   },
   {
     id: 'linkedin-link',
@@ -46,15 +54,13 @@ const contacts = [
     label: 'LinkedIn',
     handle: 'Twaran Gupta',
     href: 'https://www.linkedin.com/in/twarangupta/',
-    color: '#0a66c2',
   },
   {
     id: 'email-link',
     icon: <MailIcon />,
     label: 'Email',
-    handle: 'twaranguptawork@gmail.com',
-    href: 'mailto:twaranguptawork@gmail.com',
-    color: '#7c6aff',
+    handle: 'twarangupta01@gmail.com',
+    href: 'mailto:twarangupta01@gmail.com',
   },
   {
     id: 'twitter-link',
@@ -62,7 +68,6 @@ const contacts = [
     label: 'X / Twitter',
     handle: '@TwaranGupta',
     href: 'https://x.com/TwaranGupta',
-    color: 'var(--text-primary)',
   },
   {
     id: 'instagram-link',
@@ -70,7 +75,14 @@ const contacts = [
     label: 'Instagram',
     handle: '@twarangupta',
     href: 'https://instagram.com/twarangupta',
-    color: '#e1306c',
+  },
+  {
+    id: 'resume-link',
+    icon: <ResumeIcon />,
+    label: 'Resume',
+    handle: 'Download PDF',
+    href: '/resume.pdf',
+    download: true,
   },
 ];
 
@@ -80,10 +92,8 @@ export default function Contact() {
       <div className="container">
         {/* Header */}
         <div className="page-header animate-fade-up">
-          <span className="page-label">Let's Connect</span>
-          <h1 className="page-title">
-            Say <span className="gradient-text">Hello</span> 👋
-          </h1>
+          <span className="page-label">// Let's Connect</span>
+          <h1 className="page-title">Say Hello</h1>
           <p className="page-desc">
             Whether you want to collaborate, have a question, or just want to
             chat about technology — I'd love to hear from you. Pick your
@@ -98,12 +108,13 @@ export default function Contact() {
               key={c.id}
               id={c.id}
               href={c.href}
-              target={c.id !== 'email-link' ? '_blank' : undefined}
+              target={!c.download && c.id !== 'email-link' ? '_blank' : undefined}
               rel="noopener noreferrer"
+              download={c.download || undefined}
               className="contact-card"
               style={{ animationDelay: `${i * 60}ms` }}
             >
-              <div className="contact-icon" style={{ '--icon-color': c.color }}>
+              <div className="contact-icon">
                 {c.icon}
               </div>
               <div className="contact-info">
