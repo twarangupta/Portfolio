@@ -1,11 +1,27 @@
 import { experience, education, leadership } from '../src/data/experience.js';
 import { skills } from '../src/data/skills.js';
 import { projects } from '../src/data/projects.js';
+import { profile } from '../src/data/profile.js';
 
 const GROQ_MODEL = 'llama-3.3-70b-versatile';
 const GEMINI_MODEL = 'gemini-2.0-flash';
 const MAX_QUESTION_LENGTH = 300;
 const MAX_OUTPUT_TOKENS = 200;
+
+function buildProfileText() {
+  const lines = [];
+  if (profile.age) lines.push(`Age: ${profile.age}`);
+  if (profile.location) lines.push(`Location: ${profile.location}`);
+  if (profile.bio) lines.push(`Bio: ${profile.bio}`);
+  if (profile.workStyle) lines.push(`Work style: ${profile.workStyle}`);
+  if (profile.availability) lines.push(`Availability: ${profile.availability}`);
+  if (profile.workArrangement) lines.push(`Work arrangement: ${profile.workArrangement}`);
+  if (profile.languages?.length) lines.push(`Languages: ${profile.languages.join(', ')}`);
+  if (profile.interests?.length) lines.push(`Interests: ${profile.interests.join(', ')}`);
+  if (profile.funFacts?.length) lines.push(`Fun facts: ${profile.funFacts.join('; ')}`);
+  if (profile.lookingFor) lines.push(`Looking for: ${profile.lookingFor}`);
+  return lines.join('\n');
+}
 
 function buildContext() {
   const expText = experience
@@ -21,10 +37,11 @@ function buildContext() {
   const projectsText = projects.map((p) => `${p.title}: ${p.summary} [${p.stack.join(', ')}]`).join('\n');
   const eduText = `${education.degree}, ${education.school} (${education.period}), CGPA ${education.gpa}`;
   const leadershipText = leadership.join('\n');
+  const profileText = buildProfileText();
 
   return `You are a terminal assistant on Twaran Gupta's personal portfolio website. Answer questions about Twaran using only the information below, in third person, in 2-4 concise sentences. If the answer isn't in this data, say you don't have that information and suggest the Contact page.
 
-WORK EXPERIENCE:
+${profileText ? `PERSONAL:\n${profileText}\n\n` : ''}WORK EXPERIENCE:
 ${expText}
 
 SKILLS:
