@@ -137,13 +137,21 @@ export default function Terminal() {
     return () => clearInterval(id);
   }, [typingDone]);
 
+  const typeOutput = (entryIndex, text) => {
+    let i = 0;
+    const id = setInterval(() => {
+      i += 1;
+      const done = i >= text.length;
+      setHistory((prev) => prev.map((h, idx) => (
+        idx === entryIndex ? { ...h, output: text.slice(0, i), loading: false, typing: !done } : h
+      )));
+      if (done) clearInterval(id);
+    }, 15);
+  };
+
   const askAI = async (command, question) => {
     const entryIndex = history.length;
     setHistory((prev) => [...prev, { command, output: 'Thinking...', isAI: true, loading: true }]);
-
-    const setAnswer = (output) => {
-      setHistory((prev) => prev.map((h, i) => (i === entryIndex ? { ...h, output, loading: false } : h)));
-    };
 
     try {
       const res = await fetch('/api/ask', {
@@ -152,9 +160,10 @@ export default function Terminal() {
         body: JSON.stringify({ question }),
       });
       const data = await res.json();
-      setAnswer(res.ok ? data.answer : data.error || 'Something went wrong.');
+      const text = res.ok ? data.answer : data.error;
+      typeOutput(entryIndex, text || 'Something went wrong.');
     } catch {
-      setAnswer('Network error — try again.');
+      typeOutput(entryIndex, 'Network error — try again.');
     }
   };
 
@@ -218,6 +227,7 @@ export default function Terminal() {
                   <pre className={`terminal-output${h.loading ? ' ai-thinking' : ''}`}>
                     {h.isAI && <span className="ai-tag">AI</span>}
                     {h.output}
+                    {h.typing && <span className="terminal-cursor" />}
                   </pre>
                 )}
               </div>
