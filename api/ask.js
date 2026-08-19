@@ -3,8 +3,8 @@ import { skills } from '../src/data/skills.js';
 import { projects } from '../src/data/projects.js';
 import { profile } from '../src/data/profile.js';
 
-const GROQ_MODEL = 'llama-3.3-70b-versatile';
-const GEMINI_MODEL = 'gemini-2.0-flash';
+const GROQ_MODEL = 'groq/compound-mini';
+const GEMINI_MODEL = 'gemini-3.6-flash';
 const MAX_QUESTION_LENGTH = 300;
 const MAX_OUTPUT_TOKENS = 200;
 
