@@ -3,8 +3,8 @@ export const projects = [
     id: 4,
     title: "JobMaxxing AI",
     summary:
-      "A modern, Gen Z-focused job portal designed to match emerging talent with companies through a streamlined, engaging interface.",
-    stack: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
+      "A full-stack AI career platform with an automated resume parser and GitHub profile analyzer, powered by LLM/AI API integrations. Includes Supabase OAuth auth and a modular React dashboard for the end-to-end job-search workflow.",
+    stack: ["React", "Vite", "Tailwind CSS", "Node.js", "Express", "Supabase"],
     live: "https://jobmaxxing.in",
     featured: true,
   },

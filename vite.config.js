@@ -7,6 +7,7 @@ export default defineConfig({
     react(),
     Sitemap({
       hostname: "https://twarangupta.com",
+      dynamicRoutes: ["/experience", "/projects", "/skills", "/contact"],
     }),
   ],
 });
