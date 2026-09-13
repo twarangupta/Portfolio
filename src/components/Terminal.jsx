@@ -30,7 +30,7 @@ const KNOWN_COMMANDS = new Set([
 const PLACEHOLDER_QUESTIONS = [
   'what did you work on at ZS Associates?',
   "what's your tech stack?",
-  'tell me about GlobalShare',
+  'tell me about JobMaxxing AI',
   'what are you looking for next?',
   'what did you study in college?',
 ];
@@ -69,9 +69,9 @@ function runCommand(raw, navigate) {
 
   switch (cmd) {
     case 'whoami':
-      return 'Twaran Gupta — Software Development Engineer at ZS Associates. I build production systems for Fortune 500 enterprises, from React UIs to Node APIs to data pipelines.';
+      return 'Twaran Gupta — Backend-focused Full-Stack Software Development Engineer at ZS Associates. I build production systems for Fortune 500 enterprises, from Node.js APIs to data pipelines to React UIs.';
     case 'skills':
-      return 'JavaScript, TypeScript, React, Angular, Node.js, Express.js, PostgreSQL, Snowflake, Redis, Docker, Git';
+      return 'JavaScript, TypeScript, Node.js, Express.js, Redis, MySQL, PostgreSQL, Snowflake, React, Redux, AWS, Docker';
     case 'contact':
       return [
         'email:    twarangupta01@gmail.com',

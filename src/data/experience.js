@@ -1,7 +1,7 @@
 export const stats = [
-  { value: '$65M+', label: 'Client revenue impact' },
-  { value: '60%', label: 'Faster API response time' },
-  { value: '35%', label: 'Less manual processing' },
+  { value: '$29M+', label: 'Contract value automated' },
+  { value: '60%', label: 'Faster API latency' },
+  { value: '35%', label: 'Less manual data processing' },
   { value: 'Top 10', label: 'of 200+ hackathon teams' },
 ];
 
@@ -15,13 +15,13 @@ export const experience = [
       {
         title: 'Enterprise Contract Decision Support Platform',
         clients: 'Pfizer, Merck',
-        stack: ['React', 'Node.js', 'Express.js', 'JWT', 'RBAC'],
+        stack: ['Node.js', 'Express.js', 'TypeScript', 'Redis', 'MySQL', 'React', 'Redux', 'JWT', 'RBAC'],
         points: [
-          'Engineered modular, reusable React UI components for contract review workflows, supporting $29M+ in client revenue generated within 9 months across Pfizer and Merck engagements.',
-          'Built and deployed RESTful APIs using Node.js and Express.js to automate contract decision workflows, reducing manual processing time by 30% and improving turnaround time.',
-          'Implemented JWT-based authentication and role-based access control (RBAC) for enterprise users, securing multi-tenant contract data across client environments.',
-          'Received a Client Appreciation Award for optimizing contract decision APIs with asynchronous processing, cutting response time from ~500ms to ~200ms — a 60% improvement.',
-          'Developed shared database stored procedures for client-specific business logic and data transformations, reducing backend processing overhead.',
+          'Built REST/JSON APIs in Node.js, Express.js, and TypeScript that automated contract-decision workflows end to end across Pfizer and Merck engagements spanning $29M+ in contract value, cutting manual processing time by 30%.',
+          'Re-architected synchronous flows into asynchronous processing with Redis caching, reducing API latency by 60% (~500ms to ~200ms) under production load — earning a Client Appreciation Award.',
+          'Authored SQL stored procedures on MySQL (Amazon RDS) and applied OOP design patterns to encapsulate business logic, reducing backend overhead and guaranteeing data consistency across deployments.',
+          'Enforced data isolation with JWT authentication and role-based access control (RBAC), securing sensitive multi-tenant data across every client environment.',
+          'Built a reusable React and Redux component library adopted by the team to standardize the review UI and accelerate feature delivery.',
         ],
       },
       {
@@ -29,11 +29,9 @@ export const experience = [
         clients: 'Sanofi',
         stack: ['IICS (Informatica)', 'Snowflake', 'SQL', 'ETL'],
         points: [
-          'Architected end-to-end batch data ingestion and transformation pipelines using IICS (Informatica), enabling analytics workflows that contributed to $36M in client revenue.',
-          'Reduced manual data processing effort by 35% by building automated ETL mappings and data validation checks.',
-          'Designed Snowflake-based warehouse schemas and SQL transformations to produce analytics-ready datasets, cutting stage-to-production deployment time by 25%.',
-          'Implemented data quality metrics and validation frameworks, reducing downstream data issues by 20%.',
-          'Led production pipeline monitoring and anomaly resolution, reducing failure rates by 15–20%.',
+          'Built ETL ingestion and transformation pipelines in IICS (Informatica) into a Snowflake warehouse, automating SQL validation to cut manual data-processing effort by 35%.',
+          'Owned production pipeline monitoring and anomaly resolution, driving failure rates down 15–20%.',
+          'Engineered a one-click refresh pipeline that ingested and reconciled data across multiple source systems with automated sanity checks — relied on by C-suite stakeholders for critical decisions, contributing to approximately $4.3M in project revenue.',
         ],
       },
     ],
@@ -45,10 +43,10 @@ export const experience = [
     period: 'January 2023 – June 2023',
     projects: [
       {
-        stack: ['React.js'],
+        stack: ['React', 'Redux', 'Jest'],
         points: [
-          'Delivered 10+ UI features and components using React.js, accelerating product feature releases and improving end-user experience.',
-          'Partnered with senior engineers to establish clean code standards and testing practices, reducing rework during code reviews.',
+          'Shipped 10+ UI features and components with React.js and Redux across an application serving 10K+ users.',
+          'Established clean-code standards and testing with Jest, reducing rework during code reviews.',
         ],
       },
     ],

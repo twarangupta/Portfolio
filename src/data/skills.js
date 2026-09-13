@@ -1,26 +1,26 @@
 export const skills = [
   {
     category: "Languages",
-    items: ["JavaScript", "TypeScript", "Python", "C++", "SQL", "HTML", "CSS"],
-  },
-  {
-    category: "Frontend",
-    items: ["React", "Angular", "Redux", "Vite", "React Router", "Responsive Design"],
+    items: ["JavaScript (ES6+)", "TypeScript", "Python", "C++", "SQL"],
   },
   {
     category: "Backend",
-    items: ["Node.js", "Express.js", "REST APIs", "Redis", "JWT Authentication", "RBAC"],
+    items: ["Node.js", "Express.js", "REST APIs", "JWT & RBAC Authentication", "Asynchronous Processing", "Redis (Caching)", "Stored Procedures"],
   },
   {
-    category: "Database",
-    items: ["PostgreSQL", "MySQL", "MongoDB", "Snowflake", "Supabase", "SQLite"],
+    category: "Databases & Data",
+    items: ["MySQL (Amazon RDS)", "PostgreSQL", "MongoDB", "Snowflake", "ETL (IICS / Informatica)"],
+  },
+  {
+    category: "Frontend",
+    items: ["React", "Redux", "Responsive UI"],
   },
   {
     category: "Cloud & DevOps",
-    items: ["AWS S3", "Docker", "Firebase", "IICS (Informatica)", "CI/CD"],
+    items: ["AWS (EC2, S3, RDS)", "Docker", "CI/CD", "Git", "GitHub", "Bitbucket"],
   },
   {
-    category: "Tools & Practices",
-    items: ["Git", "GitHub", "Bitbucket", "Vercel", "Agile/Scrum", "Data Structures & Algorithms"],
+    category: "Testing & Practices",
+    items: ["Jest (Unit & Integration Testing)", "Data Structures & Algorithms", "OOP", "Agile/Scrum"],
   },
 ];
