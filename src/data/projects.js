@@ -1,5 +1,15 @@
 export const projects = [
   {
+    id: 5,
+    title: "SinkedIn",
+    summary:
+      "A pseudonymous community for the honest side of job searching — rejections, ghostings, and comebacks — paired with a private application tracker for funnel analytics, resume-per-application tracking, and response-rate insights.",
+    stack: ["Next.js", "TypeScript", "Node.js", "Express", "PostgreSQL", "Prisma"],
+    github: "https://github.com/twarangupta/SinkedIn",
+    live: "https://sinkedin.in",
+    featured: true,
+  },
+  {
     id: 4,
     title: "JobMaxxing AI",
     summary:
