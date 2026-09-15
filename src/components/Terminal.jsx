@@ -69,9 +69,9 @@ function runCommand(raw, navigate) {
 
   switch (cmd) {
     case 'whoami':
-      return 'Twaran Gupta — Backend-focused Full-Stack Software Development Engineer at ZS Associates. I build production systems for Fortune 500 enterprises, from Node.js APIs to data pipelines to React UIs.';
+      return 'Twaran Gupta — Backend Software Engineer at ZS Associates. I build production systems for Fortune 500 enterprises, from Node.js APIs to data pipelines, with React on the frontend when needed.';
     case 'skills':
-      return 'JavaScript, TypeScript, Node.js, Express.js, Redis, MySQL, PostgreSQL, Snowflake, React, Redux, AWS, Docker';
+      return 'Node.js, Express.js, TypeScript, JavaScript, PostgreSQL, MySQL, Redis, System Design, React, Next.js, AWS, Docker';
     case 'contact':
       return [
         'email:    twarangupta01@gmail.com',

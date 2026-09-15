@@ -18,21 +18,21 @@ export default function Home() {
           {/* Left: Text */}
           <div className="hero-content">
             <span className="hero-eyebrow animate-fade-up" style={{ animationDelay: '40ms' }}>
-              // Software Development Engineer
+              // Backend Software Engineer
             </span>
 
             <h1 className="hero-title animate-fade-up" style={{ animationDelay: '120ms' }}>
               Building
               <br />
-              Full-Stack
+              Backend
               <br />
-              Web Apps
+              Systems
               <br />
-              End To End
+              That Scale
             </h1>
 
             <p className="hero-bio animate-fade-up" style={{ animationDelay: '220ms' }}>
-              1.5+ years building production systems in React and Node.js —
+              1.5+ years building backend systems in Node.js and Express —
               from enterprise contract workflows to large-scale data pipelines
               for Fortune 500 enterprises.
             </p>

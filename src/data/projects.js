@@ -3,7 +3,7 @@ export const projects = [
     id: 5,
     title: "SinkedIn",
     summary:
-      "A pseudonymous community for the honest side of job searching — rejections, ghostings, and comebacks — paired with a private application tracker for funnel analytics, resume-per-application tracking, and response-rate insights.",
+      "A pseudonymous community for the honest side of job searching, paired with a private application tracker. Strict layered Express API (routes → controllers → services → Prisma) with Zod validation on every request, Supabase Auth with local JWT verification, row-level-secured resume storage via signed URLs, and CI/CD (GitHub Actions, Vitest) deploying to Vercel and Render.",
     stack: ["Next.js", "TypeScript", "Node.js", "Express", "PostgreSQL", "Prisma"],
     github: "https://github.com/twarangupta/SinkedIn",
     live: "https://sinkedin.in",
