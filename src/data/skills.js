@@ -1,26 +1,26 @@
 export const skills = [
   {
-    category: "Languages",
-    items: ["JavaScript (ES6+)", "TypeScript", "Python", "C++", "SQL"],
-  },
-  {
     category: "Backend",
-    items: ["Node.js", "Express.js", "REST APIs", "JWT & RBAC Authentication", "Asynchronous Processing", "Redis (Caching)", "Stored Procedures"],
+    items: ["Node.js", "Express.js", "REST APIs", "API Design", "Asynchronous Processing", "Caching (Redis)", "Rate Limiting", "JWT & RBAC Auth", "Stored Procedures", "System Design"],
   },
   {
-    category: "Databases & Data",
-    items: ["MySQL (Amazon RDS)", "PostgreSQL", "MongoDB", "Snowflake", "ETL (IICS / Informatica)"],
+    category: "Languages",
+    items: ["JavaScript (ES6+)", "TypeScript", "Python", "SQL"],
+  },
+  {
+    category: "Databases",
+    items: ["PostgreSQL", "MySQL", "MongoDB", "Prisma (ORM)"],
+  },
+  {
+    category: "Cloud & Tools",
+    items: ["AWS (EC2, S3, RDS)", "Docker", "CI/CD", "Git", "GitHub", "Jest", "Monitoring & Observability"],
   },
   {
     category: "Frontend",
-    items: ["React", "Redux", "Responsive UI"],
+    items: ["React", "Next.js", "Redux", "HTML5", "CSS3"],
   },
   {
-    category: "Cloud & DevOps",
-    items: ["AWS (EC2, S3, RDS)", "Docker", "CI/CD", "Git", "GitHub", "Bitbucket"],
-  },
-  {
-    category: "Testing & Practices",
-    items: ["Jest (Unit & Integration Testing)", "Data Structures & Algorithms", "OOP", "Agile/Scrum"],
+    category: "AI / LLM",
+    items: ["LLM / AI API Integration", "Prompt Engineering", "AI-Powered Features"],
   },
 ];
