@@ -15,6 +15,7 @@ export const projects = [
     summary:
       "A full-stack AI career platform with an automated resume parser and GitHub profile analyzer, powered by LLM/AI API integrations. Includes Supabase OAuth auth and a modular React dashboard for the end-to-end job-search workflow.",
     stack: ["React", "Vite", "Tailwind CSS", "Node.js", "Express", "Supabase"],
+    github: "https://github.com/jobmaxxing/jobmaxxing-app",
     live: "https://jobmaxxing.in",
     featured: true,
   },
