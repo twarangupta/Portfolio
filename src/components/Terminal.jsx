@@ -30,7 +30,7 @@ const KNOWN_COMMANDS = new Set([
 const PLACEHOLDER_QUESTIONS = [
   'what did you work on at ZS Associates?',
   "what's your tech stack?",
-  'tell me about JobMaxxing AI',
+  'tell me about SinkedIn',
   'what are you looking for next?',
   'what did you study in college?',
 ];
